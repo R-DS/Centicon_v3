@@ -4,32 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construction Company</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+            padding: 0;
         }
+
         .navbar {
-            background-color: #1c2834;
+            background-color: #1c2834; /* Dark blue background */
         }
+
         .navbar-brand {
             background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        .navbar-toggler-icon {
+            background-color: #34495e; /* White color for hamburger icon */
+        }
+
+        .navbar-toggler {
+            border-color: #ffdf7a; /* White border color for hamburger icon */
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white on hover */
+        }
+
         .section {
             padding: 60px 0;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
+
         .section.visible {
             opacity: 1;
             visibility: visible;
         }
+
         .section h2 {
             margin-bottom: 30px;
+        }
+
+        /* Scroll-to-top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .scroll-to-top-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #d69600; /* Gold gradient */
+            background: linear-gradient(0.25turn, #c17f00, #ffdf7a, #c17f00); /* Gold gradient */
+            color: #fff; /* White icon color */
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            outline: none; /* Remove default focus outline */
+        }
+
+        .scroll-to-top-btn:hover {
+            background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600); /* Darker gold gradient on hover */
+        }
+
+        .nav-link {
+            color: #fff; /* White text color */
+            font-weight: bold; /* Bold font */
+        }
+
+        .nav-link:hover {
+            color: #ffdf7a; /* Light gold on hover */
+        }
+
+        .btn-primary {
+            background-color: #d69600; /* Gold button */
+            border-color: #d69600; /* Gold border */
+        }
+
+        .btn-primary:hover {
+            background-color: #c17f00; /* Darker gold on hover */
+            border-color: #c17f00; /* Darker gold border on hover */
+        }
+
+        .btn-secondary {
+            background-color: #1c2834; /* Dark blue button */
+            border-color: #1c2834; /* Dark blue border */
+        }
+
+        .btn-secondary:hover {
+            background-color: #34495e; /* Darker blue on hover */
+            border-color: #34495e; /* Darker blue border on hover */
+        }
+
+        .btn-light {
+            background-color: #fff; /* White button */
+            border-color: #fff; /* White border */
+            color: #1c2834; /* Dark blue text color */
+        }
+
+        .btn-light:hover {
+            background-color: #f8f9fa; /* Light gray on hover */
+            border-color: #f8f9fa; /* Light gray border on hover */
+            color: #1c2834; /* Dark blue text color on hover */
         }
     </style>
 </head>
@@ -39,7 +129,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Construction Co.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -67,7 +158,8 @@
     <div class="container">
         <h2 class="text-center">About Us</h2>
         <div>
-            <p>We are a leading construction company with years of experience in delivering top-notch building solutions.</p>
+            <p>We are a leading construction company with years of experience in delivering top-notch building
+                solutions.</p>
         </div>
     </div>
 </section>
@@ -89,7 +181,7 @@
 
 <!-- Contact Section -->
 <section id="contact" class="section">
-    <div class="container">
+    <div classclass="container">
         <h2 class="text-center">Contact Us</h2>
         <div>
             <p>Phone: (123) 456-7890</p>
@@ -119,18 +211,40 @@
     </div>
 </section>
 
+<!-- Scroll-to-top button -->
+<button class="scroll-to-top btn btn-primary" onclick="scrollToTop()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+    </svg>
+</button>
+
 <!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         function showSection(section) {
-            $('.section').removeClass('visible');
             $(section).addClass('visible');
         }
 
-        $('.nav-link').on('click', function(e) {
+        function checkVisibility() {
+            $('.section').each(function () {
+                var top = $(this).offset().top - $(window).scrollTop();
+                if (top <= $(window).height() / 1.5 && top >= 0) {
+                    showSection(this);
+                }
+            });
+        }
+
+        $('.nav-link').on('click', function (e) {
             e.preventDefault();
             var target = $(this).attr('href');
             showSection(target);
@@ -144,18 +258,38 @@
             }
         });
 
-        $(window).on('scroll', function() {
-            $('.section').each(function() {
-                var top = $(this).offset().top - $(window).scrollTop();
-                if (top <= $(window).height() / 1.5 && top >= 0) {
-                    $(this).addClass('visible');
-                }
-            });
+        $(window).on('scroll', function () {
+            checkVisibility();
+            toggleScrollToTop();
         });
 
         // Show home section by default
         showSection('#home');
+        checkVisibility(); // Check visibility on page load
+
+        // Scroll-to-top button functionality
+        function scrollToTop() {
+            $('html, body').animate({scrollTop: 0}, 500);
+        }
+
+        function toggleScrollToTop() {
+            var scrollTop = $(window).scrollTop();
+            var scrollThreshold = 200; // Adjust as needed
+            var scrollToTopBtn = $('.scroll-to-top');
+
+            if (scrollTop > scrollThreshold) {
+                scrollToTopBtn.fadeIn();
+            } else {
+                scrollToTopBtn.fadeOut();
+            }
+        }
+
+        // Bind click event to scroll-to-top button
+        $('.scroll-to-top').on('click', function () {
+            scrollToTop();
+        });
     });
 </script>
 </body>
 </html>
+
