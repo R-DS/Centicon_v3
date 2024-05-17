@@ -48,7 +48,7 @@ body {
     display: flex; /* Make the section a flex container */
     flex-direction: column; /* Make the content vertical */
     justify-content: center; /* Center the content vertically */
-    align-items: start; /* Center the content horizontally */
+    align-items: center; /* Center the content horizontally */
 }
 
 .bg-video {
