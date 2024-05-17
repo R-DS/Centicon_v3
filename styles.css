@@ -1,0 +1,149 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #1c2834; /* Dark blue background */
+}
+.navbar-brand {
+    background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-toggler-icon {
+    background-color: #fff; /* White color for hamburger icon */
+}
+.navbar-toggler {
+    border-color: #fff; /* White border color for hamburger icon */
+}
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white on hover */
+}
+.section {
+    padding: 60px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.section.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.section h2 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1c2834; /* Dark blue text color */
+}
+.section p {
+    font-size: 18px;
+    color: #1c2834; /* Dark blue text color */
+}
+#home {
+    height: 100vh; /* Make the section full height */
+    display: flex; /* Make the section a flex container */
+    flex-direction: column; /* Make the content vertical */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+.bg-video {
+    height: 100vh; /* Make the video full height */
+    object-fit: cover; /* Scale the video to cover the entire section */
+    width: 100%; /* Make the video full width */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Optional, for better readability */
+    z-index: 1; /* Keep the content on top of the video */
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+.bg-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.1;
+}
+.carousel-item {
+    height: 400px;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    display: none;
+}
+.scroll-to-top-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(0.25turn, #c17f00, #ffdf7a, #c17f00); /* Gold gradient */
+    color: #fff; /* White icon color */
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    outline: none; /* Remove default focus outline */
+}
+.scroll-to-top-btn:hover {
+    background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600); /* Darker gold gradient on hover */
+}
+.nav-link {
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold font */
+}
+.nav-link:hover {
+    color: #ffdf7a; /* Light gold on hover */
+}
+.btn-primary {
+    background-color: #d69600; /* Gold button */
+    border-color: #d69600; /* Gold border */
+}
+.btn-primary:hover {
+    background-color: #c17f00; /* Darker gold on hover */
+    border-color: #c17f00; /* Darker gold border on hover */
+}
+.btn-secondary {
+    background-color: #1c2834; /* Dark blue button */
+    border-color: #1c2834; /* Dark blue border */
+}
+.btn-secondary:hover {
+    background-color: #34495e; /* Darker blue on hover */
+    border-color: #34495e; /* Darker blue border on hover */
+}
+.btn-light {
+    background-color: #fff; /* White button */
+    border-color: #fff; /* White border */
+    color: #1c2834; /* Dark blue text color */
+}
+.btn-light:hover {
+    background-color: #f8f9fa; /* Light gray on hover */
+    border-color: #f8f9fa; /* Light gray border on hover */
+    color: #1c2834; /* Dark blue text color on hover */
+}

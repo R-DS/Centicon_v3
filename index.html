@@ -4,162 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construction Company</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-            background-color: #f8f9fa; /* Light gray background */
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #1c2834; /* Dark blue background */
-        }
-        .navbar-brand {
-            background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .navbar-toggler-icon {
-            background-color: #1c2834; /* White color for hamburger icon */
-        }
-
-        .navbar-toggler {
-            border-color: #fff; /* White border color for hamburger icon */
-        }
-
-        .navbar-toggler:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white on hover */
-        }
-
-        .section {
-            padding: 60px 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .section h2 {
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .section p {
-            font-size: 18px;
-        }
-
-        .bg-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.7;
-        }
-
-        .bg-image {
-            width: 100%;
-            height: auto;
-            opacity: 0.7;
-        }
-
-        .carousel-item {
-            height: 400px;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* Scroll-to-top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            z-index: 1000;
-            display: none;
-        }
-
-        .scroll-to-top-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(0.25turn, #c17f00, #ffdf7a, #c17f00); /* Gold gradient */
-            color: #fff; /* White icon color */
-            font-size: 24px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-            outline: none; /* Remove default focus outline */
-        }
-
-        .scroll-to-top-btn:hover {
-            background: linear-gradient(0.25turn, #d69600, #ffdf7a, #d69600); /* Darker gold gradient on hover */
-        }
-
-        .nav-link {
-            color: #fff; /* White text color */
-            font-weight: bold; /* Bold font */
-        }
-
-        .nav-link:hover {
-            color: #ffdf7a; /* Light gold on hover */
-        }
-
-        .btn-primary {
-            background-color: #d69600; /* Gold button */
-            border-color: #d69600; /* Gold border */
-        }
-
-        .btn-primary:hover {
-            background-color: #c17f00; /* Darker gold on hover */
-            border-color: #c17f00; /* Darker gold border on hover */
-        }
-
-        .btn-secondary {
-            background-color: #1c2834; /* Dark blue button */
-            border-color: #1c2834; /* Dark blue border */
-        }
-
-        .btn-secondary:hover {
-            background-color: #34495e; /* Darker blue on hover */
-            border-color: #34495e; /* Darker blue border on hover */
-        }
-
-        .btn-light {
-            background-color: #fff; /* White button */
-            border-color: #fff; /* White border */
-            color: #1c2834; /* Dark blue text color */
-        }
-
-        .btn-light:hover {
-            background-color: #f8f9fa; /* Light gray on hover */
-            border-color: #f8f9fa; /* Light gray border on hover */
-            color: #1c2834; /* Dark blue text color on hover */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -186,10 +33,10 @@
 <!-- Home Section -->
 <section id="home" class="section bg-light">
     <video class="bg-video" autoplay muted loop>
-        <source src="construction.mp4" type="video/mp4">
+        <source src="sources/construction1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="container text-center text-white">
+    <div class="container text-center text-white overlay">
         <h2>Welcome to Construction Company</h2>
         <p>Your trusted partner in building dreams.</p>
     </div>
@@ -216,36 +63,8 @@
     <div class="container">
         <h2 class="text-center">Our Services</h2>
         <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="service1.jpg" class="d-block w-100" alt="Residential Construction">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Residential Construction</h5>
-                        <p>Building quality homes for your family.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="service2.jpg" class="d-block w-100" alt="Commercial Construction">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Commercial Construction</h5>
-                        <p>Developing state-of-the-art commercial spaces.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="service3.jpg" class="d-block w-100" alt="Renovations and Remodeling">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Renovations and Remodeling</h5>
-                        <p>Transforming your existing spaces into something new.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="service4.jpg" class="d-block w
--100" alt="Tiling Services">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tiling Services</h5>
-                        <p>Providing high-quality tiling solutions for your floors and walls.</p>
-                    </div>
-                </div>
+            <div class="carousel-inner" id="servicesInner">
+                <!-- Services will be added dynamically -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -291,6 +110,7 @@
     </div>
 </section>
 
+
 <!-- Scroll-to-top button -->
 <button class="scroll-to-top btn btn-primary scroll-to-top-btn" onclick="scrollToTop()">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle"
@@ -300,7 +120,6 @@
     </svg>
 </button>
 
-<!-- jQuery and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -309,66 +128,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        function showSection(section) {
-            $(section).addClass('visible');
-        }
-
-        function checkVisibility() {
-            $('.section').each(function () {
-                var top = $(this).offset().top - $(window).scrollTop();
-                if (top <= $(window).height() / 1.5 && top >= 0) {
-                    showSection(this);
-                }
-            });
-        }
-
-        $('.nav-link').on('click', function (e) {
-            e.preventDefault();
-            var target = $(this).attr('href');
-            showSection(target);
-            $('html, body').animate({
-                scrollTop: $(target).offset().top - $('.navbar').outerHeight()
-            }, 500);
-
-            // Collapse the navbar after clicking a menu item
-            if ($('.navbar-toggler').is(':visible')) {
-                $('.navbar-collapse').collapse('hide');
-            }
-        });
-
-        $(window).on('scroll', function () {
-            checkVisibility();
-            toggleScrollToTop();
-        });
-
-        // Show home section by default
-        showSection('#home');
-        checkVisibility(); // Check visibility on page load
-
-        // Scroll-to-top button functionality
-        function scrollToTop() {
-            $('html, body').animate({scrollTop: 0}, 500);
-        }
-
-        function toggleScrollToTop() {
-            var scrollTop = $(window).scrollTop();
-            var scrollThreshold = 200; // Adjust as needed
-            var scrollToTopBtn = $('.scroll-to-top');
-
-            if (scrollTop > scrollThreshold) {
-                scrollToTopBtn.fadeIn();
-            } else {
-                scrollToTopBtn.fadeOut();
-            }
-        }
-
-        // Bind click event to scroll-to-top button
-        $('.scroll-to-top').on('click', function () {
-            scrollToTop();
-        });
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
